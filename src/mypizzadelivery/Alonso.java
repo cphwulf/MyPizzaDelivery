@@ -12,9 +12,11 @@ package mypizzadelivery;
 public class Alonso {
 	int exitValue;
 	Menu menu;
+	String menuFile;
 	
 	public Alonso() {
 		this.exitValue = 7;
+		this.menuFile = "Data/Menu.txt";
 	}
 	
 	
@@ -56,7 +58,27 @@ public class Alonso {
 					System.out.println("Exit");
 					
 			}
-		}
-	}
-	
+			public void initializeMenu() {
+				menu.initMenuFromFile();
+			}
+			public void showPizzas() {
+				menu.initMenuFromFile();
+			}
+			public void newOrder() {
+				menu.initMenuFromFile();
+			}
+			public void showAllOrders() {
+				menu.initMenuFromFile();
+			}
+			public void removeOrderFromList() {
+				menu.initMenuFromFile();
+			}
+			public void runStats() {
+				menu.initMenuFromFile();
+			}
+				
+			}
+				
+			}
 }
+
