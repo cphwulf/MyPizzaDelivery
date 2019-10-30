@@ -18,12 +18,14 @@ public class Alonso {
 	Menu menu;
 	String menuFile;
 	Scanner myScanner;
+	OrderHandler myOrderHandler;
 	
 	public Alonso() {
 		this.exitValue = 7;
 		this.menuFile = "Data/Menu2.txt";
 		myScanner = new Scanner(System.in);
 		menu = new Menu();
+		myOrderHandler = new OrderHandler();
 	}
 	
 	public void runProgram() throws FileNotFoundException {
@@ -86,6 +88,8 @@ public class Alonso {
 		menu.printMenu();
 	}
 	public void removeOrderFromList() {
+
+
 		menu.printMenu();
 	}
 	public void runStats() {

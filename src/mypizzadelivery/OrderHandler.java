@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mypizzadelivery;
 
 import java.io.BufferedReader;
@@ -11,6 +6,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,30 +15,54 @@ import java.io.IOException;
  */
 
 public class OrderHandler {
-
-	Order order;
-	String filename;
-
+	
+	private LocalDateTime initTime;
+	private String filename = "Data/AllOrders";
+	private ArrayList<Order> orders;
+	
 	public OrderHandler() {
-		this.filename = "Data/ActualOrders";
-
+		orders = new ArrayList<>();
+		initTime = LocalDateTime.now();
 	}
-
-	public void orderInitializer() {
-		this.order = new Order();
+	
+	public void addOrderToOrderList(Order order) {
+		this.orders.add(order);
 	}
-
-	public void submitOrderToActualOrders(Order myOrder) throws IOException {
+	
+	public int getSizeOfList() {
+		return orders.size();
+	}
+	
+	public void markOrderCompleted(Order myOrder) throws IOException {
 		// åbne fil med aktuelle ordrer i appendmode
 		// tilføje ordren til filen
 		// luk
-//		38;3;Sunshine; ;87;13:02
-//Order{submitTime=null, id=34, orderedPizzas={id: 1,Name: Margherita,Pris: 76.0}{id: 2,Name: Pepperoni,Pris: 78.0}}
+		removeOrderFromActualOrders(myOrder);
+		writeOrderToAllOrders(myOrder);
+	}
+		
+	public void removeOrderFromActualOrders(Order myOrder) {
+		orders.remove(myOrder);
+	}
+
+	public void writeOrderToAllOrders(Order myOrder) throws IOException {
+		String orderLine = "";
+		orderLine += myOrder.getOrderId() + ";";
+		orderLine += myOrder.toString();
 		File fh = new File(filename);
 		FileWriter fw = new FileWriter(fh,true);
 		BufferedWriter bw = new BufferedWriter(fw);
-		String orderLine = myOrder.toString();
 		bw.write(orderLine);
 		bw.close();
+	}
+	
+	public String toString() {
+		String msg = "";
+		for (Order o : orders) {
+			msg += "OrdreID: " + o.getOrderId();
+			msg += o.toString();
+		}
+		return msg;
+		
 	}
 }
