@@ -26,10 +26,26 @@ public class OrderHandlerTest {
 		
 	}
 	
+
+	/**
+	 * Test of orderInitializer method, of class OrderHandler.
+	 */
 	@Test
-	public void testSomeMethod() throws IOException {
+	public void testOrderInitializer() {
+		System.out.println("orderInitializer");
+		OrderHandler instance = new OrderHandler();
+		instance.orderInitializer();
+		// TODO review the generated test code and remove the default call to fail.
+		fail("The test case is a prototype.");
+	}
+
+	/**
+	 * Test of submitOrderToActualOrders method, of class OrderHandler.
+	 */
+	@Test
+	public void testSubmitOrderToActualOrders() throws Exception {
+		System.out.println("submitOrderToActualOrders");
 		myOrderHandler.submitOrderToActualOrders(myOrder);
-		myOrderHandler.editOrder(myOrder);
 		// TODO review the generated test code and remove the default call to fail.
 		int actual = 34;
 		int expected = 33;

@@ -5,6 +5,8 @@
  */
 package mypizzadelivery;
 
+import java.io.FileNotFoundException;
+
 /**
  *
  * @author thor
@@ -14,8 +16,9 @@ public class MyPizzaDelivery {
 	/**
 	 * @param args the command line arguments
 	 */
-	public static void main(String[] args) {
-		// TODO code application logic here
+	public static void main(String[] args) throws FileNotFoundException {
+		Alonso myAlonso = new Alonso();
+		myAlonso.runProgram();
 	}
 	
 }

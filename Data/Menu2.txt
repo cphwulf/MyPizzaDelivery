@@ -1,29 +1,2 @@
 1;Margherita; The foundation for all our pizzas, mozzarella and cheddar cheese with tomato sauce and herbs ;76
 2;Pepperoni;Hot and spicy pepperoni with mixed peppers;78
-3;Sunshine; Ham and pineapple, a popular choice;87
-4;Broccolli;Broccolli and extra cheese;60
-5;Pig 'N' Funghi; Ham and mushroom;69
-6;Italia; Italian sausage, garlic and onion;78
-7;Al Polio; Spicy chicken, sweetcorn and mushrooms;87
-9;The Tree Hugger; Garlic and red onion;69
-10;Flaming Chicken; a ;78
-11;The Carnivore; Chilli beef, sausage, hot 'n' spicy, pepperoni and ham;87
-12;Sweet Chilli Chicken; Pieces of succulent chicken coated in sweet chilli;60
-13;Blazing Saddles; Our traditional margherita topped with beans and sausage, great for the kids;78
-14;Bacon Double Cheesburger Pizza; Bacon, chilli beef and double cheese ;87
-15;Caprina; ;87
-16;Greek;Garlic, olives, onion and feta cheese ;69
-17;Tex-Mex; Chilli beef, jalapenos;69
-18;Chicken Tikka; Chicken tikka, peppers, onions and herbs;87
-19;Volcano ; ;87
-20;The Hot Top;Onion, mixed peppers, jalapenos and extra cheese ;69
-21;Veg A Roma; Sun dried tomatoes, garlic, olives and mixed peppers ;78
-22;Garlic Pizza; Slices of mozzarella cheese, sun dried tomato, garlic and herbs;87
-23;Mellow Yellow; Pineapple and sweetcorn ;96
-24;Yellow Peril; Pineapple, sweetcorn and hot chilli sauce;69
-25;Four Seasons; Pepperoni, ham and pineapple, mixed peppers, mushrooms and onion ;78
-26;BBQ Chicken;BBQ chicken and sweetcorn;87
-27;St Martins Special; Pepperoni, onion, sweetcorn, garlic and red chillies ;96
-28;Tuna; Tuna;60
-29;The Cheese Delight; Goats cheese, feta cheese;69
-30;Neptune; Tuna, anchovies, black olives, capers and onions;87.5
