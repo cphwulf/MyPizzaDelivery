@@ -40,11 +40,11 @@ public class OrderHandler {
 		removeOrderFromActualOrders(myOrder);
 		writeOrderToAllOrders(myOrder);
 	}
-		
+	
 	public void removeOrderFromActualOrders(Order myOrder) {
 		orders.remove(myOrder);
 	}
-
+	
 	public void writeOrderToAllOrders(Order myOrder) throws IOException {
 		String orderLine = "";
 		orderLine += myOrder.getOrderId() + ";";

@@ -20,6 +20,17 @@ public class Menu {
 	public Menu() {
 		menuPizzas = new ArrayList<>();
 	}
+
+	public Pizza getPizzaFromMenu(int id) {
+		Pizza retValPizza = null;
+		for  (Pizza p: menuPizzas) {
+			if (p.getId() == id) {
+				retValPizza = p;
+				return  retValPizza;
+			}
+		}
+		return  retValPizza;
+	}
 	
 	public void initMenuFromFile(String filename) {
 		//3;Sunshine; Ham and pineapple, a popular choice;87

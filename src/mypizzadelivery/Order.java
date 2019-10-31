@@ -17,7 +17,10 @@ public class Order {
 	34;2;Pepperoni;78;10:30
 	*/
 	private String submitTime;
+	private String customer;
+	private String phoneNumber;
 	private int id;
+	private int pickupMinutes;
 	private double totalprice;
 	private ArrayList<Pizza> orderedPizzas;
 
@@ -39,6 +42,19 @@ public class Order {
 	public int getOrderId() {
 		return id;
 	}
+
+	public void setCustomer(String customer) {
+		this.customer = customer;
+	}
+
+	public void setPickupMinutes(int pickupMinutes) {
+		this.pickupMinutes = pickupMinutes;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	
 
 	public void setSubmitTime(String timeString) {
 		this.submitTime = timeString;

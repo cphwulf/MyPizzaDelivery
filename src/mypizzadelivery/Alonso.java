@@ -6,6 +6,7 @@
 package mypizzadelivery;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -19,10 +20,11 @@ public class Alonso {
 	String menuFile;
 	Scanner myScanner;
 	OrderHandler myOrderHandler;
+	NewOrderUI newOrderUI;
 	
 	public Alonso() {
 		this.exitValue = 7;
-		this.menuFile = "Data/Menu2.txt";
+		this.menuFile = "Data/MenuTest.txt";
 		myScanner = new Scanner(System.in);
 		menu = new Menu();
 		myOrderHandler = new OrderHandler();
@@ -34,7 +36,7 @@ public class Alonso {
 			System.out.println("1) init pizzas");
 			System.out.println("2) show pizzalist");
 			System.out.println("3) order pizza");
-			System.out.println("4) show list of  ordered pizzas");
+			System.out.println("4) show list of  actual orders");
 			System.out.println("5) remove order from ordered list");
 			System.out.println("6) show history ");
 			System.out.println("7) exit program");
@@ -79,10 +81,34 @@ public class Alonso {
 		menu.printMenu();
 	}
 	public void newOrder() {
-		menu.printMenu();
+		newOrderUI = new NewOrderUI();
+		newOrderUI.runOrderMenu();
+		ArrayList<String> retVal = newOrderUI.finalizeOrderUI();
+		System.out.println("new order vals:" + retVal.toString());
+		Order newOrder = handleOrderFromUI(retVal);
+		myOrderHandler.addOrderToOrderList(newOrder);
 	}
+
+	public Order handleOrderFromUI(ArrayList<String> retValFromUI) {
+		Order newOrder = new Order();
+		newOrder.setCustomer(retValFromUI.get(0));
+		newOrder.setPhoneNumber(retValFromUI.get(1));
+		newOrder.setPickupMinutes(Integer.parseInt(retValFromUI.get(2)));
+		String pizzaLine = retValFromUI.get(3);
+		pizzaLine = pizzaLine.substring(1,pizzaLine.length()-1);
+		String[] pizzaArr = pizzaLine.split(",");
+		for (String s: pizzaArr) {
+			s=s.trim();
+			Pizza tmpPizza = menu.getPizzaFromMenu(Integer.parseInt(s));
+			if (tmpPizza != null) {
+				newOrder.addPizza(tmpPizza);
+			}
+		}
+		return newOrder;
+	}
+
 	public void showAllOrders() {
-		menu.printMenu();
+		System.out.println(myOrderHandler.toString());
 	}
 	public void showOrderHistory() {
 		menu.printMenu();
