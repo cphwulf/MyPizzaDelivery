@@ -28,7 +28,7 @@ public class OrderTest {
 	}
 	
 	@Test
-	public void testSomeMethod() {
+	public void testAddPizza() {
 		myOrder = new Order(34);
 		myOrder.addPizza(pizza1);
 		myOrder.addPizza(pizza2);
@@ -37,6 +37,47 @@ public class OrderTest {
 		int expected = 34;
 		int actual = myOrder.getOrderId();
 		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test of getTotalPrice method, of class Order.
+	 */
+	@Test
+	public void testGetTotalPrice() {
+		System.out.println("getTotalPrice");
+		myOrder = new Order(34);
+		myOrder.addPizza(pizza1);
+		myOrder.addPizza(pizza2);
+		double expResult = 0.0;
+		double result = myOrder.getTotalPrice();
+		assertEquals(expResult, result, 0.0);
+	}
+
+	/**
+	 * Test of setTotalPrice method, of class Order.
+	 */
+	@Test
+	public void testSetTotalPrice() {
+		System.out.println("setTotalPrice");
+		myOrder = new Order(34);
+		myOrder.addPizza(pizza1);
+		myOrder.addPizza(pizza2);
+		myOrder.setTotalPrice();
+		double expResult = 154.0;
+		double result = myOrder.getTotalPrice();
+		assertEquals(expResult, result, 0.0);
+	}
+
+	/**
+	 * Test of toString method, of class Order.
+	 */
+	@Test
+	public void testToString() {
+		System.out.println("toString");
+		Order instance = new Order();
+		String expResult = "";
+		String result = instance.toString();
+		assertEquals(expResult, result);
 	}
 	
 }

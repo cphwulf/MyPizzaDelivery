@@ -21,6 +21,10 @@ public class OrderHandlerTest {
 	Order myOrder1;
 	Order myOrder2;
 	Order myOrder3;
+	Order myOrder4;
+	Order myOrder5;
+	Order myOrder6;
+	Order myOrder7;
 	OrderHandler myOrderHandler;
 	
 	@Before
@@ -40,22 +44,18 @@ public class OrderHandlerTest {
 		myOrder3 = new Order(36);
 		myOrder3.addPizza(pizza1);
 		myOrder3.addPizza(pizza7);
+		myOrder4 = new Order(37);
+		myOrder4.addPizza(pizza1);
+		myOrder4.addPizza(pizza2);
+		myOrder4.addPizza(pizza7);
+		myOrder4.addPizza(pizza4);
+		myOrder5 = new Order(38);
+		myOrder5.addPizza(pizza1);
+		myOrder5.addPizza(pizza7);
+		myOrder5.addPizza(pizza2);
 	}
 	
 	
-	/**
-	 * Test of submitOrderToActualOrders method, of class OrderHandler.
-	 */
-	@Test
-	public void testSubmitOrderToActualOrders() throws Exception {
-		System.out.println("submitOrderToActualOrders");
-	//	myOrderHandler.submitOrderToActualOrders(myOrder1);
-		// TODO review the generated test code and remove the default call to fail.
-		int actual = 34;
-		int expected = 33;
-		assertEquals(expected, actual);
-	}
-
 	/**
 	 * Test of addOrderToOrderList method, of class OrderHandler.
 	 */
@@ -63,6 +63,10 @@ public class OrderHandlerTest {
 	public void testAddOrderToOrderList() {
 		System.out.println("addordertolist");
 		myOrderHandler.addOrderToOrderList(myOrder1);
+		myOrderHandler.addOrderToOrderList(myOrder2);
+		myOrderHandler.addOrderToOrderList(myOrder3);
+		myOrderHandler.addOrderToOrderList(myOrder4);
+		myOrderHandler.addOrderToOrderList(myOrder5);
 		int actual = myOrderHandler.getSizeOfList();
 		int expected = 1;
 		assertEquals(expected, actual);
@@ -92,9 +96,15 @@ public class OrderHandlerTest {
 		myOrderHandler.addOrderToOrderList(myOrder1);
 		myOrderHandler.addOrderToOrderList(myOrder2);
 		myOrderHandler.addOrderToOrderList(myOrder3);
+		myOrderHandler.addOrderToOrderList(myOrder4);
+		myOrderHandler.addOrderToOrderList(myOrder5);
 		System.out.println(myOrderHandler);
 		System.out.println("---");
 		myOrderHandler.markOrderCompleted(myOrder1);
+		myOrderHandler.markOrderCompleted(myOrder2);
+		myOrderHandler.markOrderCompleted(myOrder3);
+		myOrderHandler.markOrderCompleted(myOrder4);
+		myOrderHandler.markOrderCompleted(myOrder5);
 		System.out.println(myOrderHandler);
 		// TODO review the generated test code and remove the default call to fail.
 		int actual = myOrderHandler.getSizeOfList();
